@@ -22,8 +22,11 @@ parties.remove({})
 
 for release in releases.find({}):
     if len(release.get('parties', [])) > 0:
-        all_parties.insert(release['parties'])
-
+        #pprint(release['parties'])
+        try:
+            all_parties.insert(release['parties'])
+        except:
+            pprint(release)
 
 for pid in all_parties.distinct('id'):
     party = all_parties.find_one({'id': pid})

@@ -54,8 +54,11 @@ def main(argv):
             "https://raw.githubusercontent.com/open-contracting/ocds_additionalContactPoints_extension/master/extension.json",
             "https://raw.githubusercontent.com/open-contracting/ocds_budget_breakdown_extension/master/extension.json",
             "https://raw.githubusercontent.com/open-contracting/ocds_contract_suppliers_extension/master/extension.json",
-            "https://raw.githubusercontent.com/CompraNet/ocds_releasePublisher_extension/master/extension.json",
-            "https://raw.githubusercontent.com/CompraNet/ocds_schemeUrl_extension/master/extension.json"
+            "https://raw.githubusercontent.com/transpresupuestaria/ocds_contract_data_extension/master/extension.json",
+            "https://raw.githubusercontent.com/transpresupuestaria/ocds_budget_classifications_extension/master/extension.json",
+            "https://raw.githubusercontent.com/open-contracting/ocds_multiple_buyers_extension/master/release-schema.json",
+            "https://raw.githubusercontent.com/transpresupuestaria/ocds_related_projects_extension/master/extension.json",
+            "https://raw.githubusercontent.com/open-contracting/ocds_additionalContactPoints_extension/master/release-schema.json"
         ]
         recordPackage["license"] = "https://datos.gob.mx/libreusomx"
         recordPackage["publicationPolicy"] = "https://compranetinfo.funcionpublica.gob.mx/descargas/politica-publicacion-EDCA-MX.pdf"
@@ -110,7 +113,7 @@ def main(argv):
                 file_path = os.path.join(output_dir, ocid + ".json")
                 with codecs.open(file_path, 'w', encoding='utf-8') as outfile:
                     json.dump(recordPackage, outfile,ensure_ascii=True,  indent=4)
-                    
+
         # update progress bar
         pbar.update(cp.get("conteo", 0))
     pbar.close()
